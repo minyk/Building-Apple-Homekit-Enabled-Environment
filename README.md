@@ -15,6 +15,25 @@ So, I decided to make a Homekit devices with `ESP8266`s and `Raspberry Pi` !
 
 Raspberry Pi 3B (already have).
 
+## HAP-NodeJS
+
+I forked from `KhaosT`'s repo(https://github.com/KhaosT/HAP-NodeJS). Some changes are made for me:
+* Configure bridge's name: `BridgedCore.js`, `15` lines.
+* Configure pincode: `BridgedCore.js`, `36` lines.
+* `TemperatureHumidity_accessory.js` in the `accessory` directory. This accessory return temperature and humidity at once.
+
+### Supported Services
+
+See this: (HAP-NodeJS-Supported-Services.md)
+
+## MQTT
+
+
+
+## Start Service using PM2
+
+* http://pm2.keymetrics.io/docs/usage/startup/
+
 ## ESP8266 boards
 
 I have some `ESP-01`, but with lacks of functionalities, I decided to buy some of other boards. Main consideration is:
@@ -37,17 +56,6 @@ I already had some experience with SHT-21 sensors. So at this time, I choose `Si
 * Luminance: To be determined.
 
 * Noise: `TBD`
-
-# HAP-NodeJS
-
-I forked from `KhaosT`'s repo(https://github.com/KhaosT/HAP-NodeJS). Some changes are made for me:
-* Configure bridge's name: `BridgedCore.js`, `15` lines.
-* Configure pincode: `BridgedCore.js`, `36` lines.
-* `TemperatureHumidity_accessory.js` in the `accessory` directory. This accessory return temperature and humidity at once.
-
-## Supported Services
-
-See this: (HAP-NodeJS-Supported-Services.md)
 
 # Arduino sketch
 
