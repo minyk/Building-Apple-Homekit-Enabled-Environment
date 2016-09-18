@@ -15,24 +15,32 @@ So, I decided to make a Homekit devices with `ESP8266`s and `Raspberry Pi` !
 
 Raspberry Pi 3B (already have).
 
-## HAP-NodeJS
+### HAP-NodeJS
 
 I forked from `KhaosT`'s repo(https://github.com/KhaosT/HAP-NodeJS). Some changes are made for me:
 * Configure bridge's name: `BridgedCore.js`, `15` lines.
 * Configure pincode: `BridgedCore.js`, `36` lines.
 * `TemperatureHumidity_accessory.js` in the `accessory` directory. This accessory return temperature and humidity at once.
 
-### Supported Services
+#### Supported Services
 
 See this: (HAP-NodeJS-Supported-Services.md)
 
-## MQTT
+### Reference
+
+[1] iOS 10 new service types issue: https://github.com/KhaosT/HAP-NodeJS/issues/253
 
 
+### MQTT
 
-## Start Service using PM2
+* Using `Mosca` because it is on the post(currently no other reason).
 
+### Start Service using PM2
+
+I want to all `node` processes are safely start on reboot.
 * http://pm2.keymetrics.io/docs/usage/startup/
+
+See this: https://gist.github.com/elvisimprsntr/f23c76587d48be0ec4b9
 
 ## ESP8266 boards
 
@@ -44,11 +52,11 @@ I have some `ESP-01`, but with lacks of functionalities, I decided to buy some o
 
 So, I choose Adafruit's `Adafruit FEATHER HUZZAH WITH ESP8266 WIFI`(https://www.adafruit.com/products/2821). It is quietly high price(per $15.95), but has all I want. It has battery connector, built-in charger through USB and maximum pinouts(I thought) by using `ESP-12` module. The `ESP8266 Breakout`(https://www.adafruit.com/product/2471) is one of the nominee for it's price($9.95) but I don't want to struggle with USB and batteries again.
 
-## Batteries
+### Batteries
 
 Adafruit has great options for batteries. I just brought 3.7V 2000mA batteries.
 
-## Environmental Sensors
+### Environmental Sensors
 
 * Temperature/ Humidity:
 I already had some experience with SHT-21 sensors. So at this time, I choose `Si7021` sensor for temperature and humidity.
@@ -57,6 +65,12 @@ I already had some experience with SHT-21 sensors. So at this time, I choose `Si
 
 * Noise: `TBD`
 
-# Arduino sketch
+# Accessory Developments
 
-`TBD`
+## JS side
+
+[1] https://github.com/Korcsog/Homekit
+
+## Arduino sketch
+
+[1] https://github.com/AdySan/HomeKitLight
